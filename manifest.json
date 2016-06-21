@@ -1,0 +1,37 @@
+{
+  "name": "Copypasta",
+  "description": "Allows you to paste in HTML code to make templates for auto-filling",
+  "version": "1",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "icons": {
+    "16": "icon_16.png",
+    "48": "icon_48.png",
+    "128": "icon_128.png"
+  },
+
+  "options_page": "options.html",
+  "content_scripts": [ {
+    "js": ["js/jquery-3.0.0.min.js", "lib/options.js"],
+    "matches": ["<all_urls>"],
+    "all_frames": true
+    }],
+
+  "permissions": [
+    "storage",
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_title": "Copypasta",
+    "default_icon": "icon_48.png"
+  },
+
+  "manifest_version": 2
+}
