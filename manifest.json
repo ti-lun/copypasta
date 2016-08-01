@@ -1,5 +1,5 @@
 {
-  "name": "Copypasta",
+  "name": "bananacopy",
   "description": "Allows you to paste in HTML code to make templates for auto-filling",
   "version": "1",
   "background": {
@@ -15,10 +15,15 @@
 
   "options_page": "options.html",
   "content_scripts": [ {
-    "js": ["js/jquery-3.0.0.min.js", "lib/options.js"],
-    "matches": ["<all_urls>"],
+    "js": ["js/jquery-3.0.0.min.js", "lib/copy/copy.js"],
+    "matches": ["file:///Users/mac/codeland/my_work/bananacopy/template_testing/copy/*"],
     "all_frames": true
-    }],
+    },
+    {
+      "js": ["js/jquery-3.0.0.min.js", "lib/paste/paste.js"],
+      "matches": ["file:///Users/mac/codeland/my_work/bananacopy/template_testing/paste/*"],
+      "all_frames": true
+      }],
 
   "permissions": [
     "storage",
@@ -29,7 +34,7 @@
   ],
 
   "browser_action": {
-    "default_title": "Copypasta",
+    "default_title": "bananacopy",
     "default_icon": "icon_48.png"
   },
 
